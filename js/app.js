@@ -28,6 +28,11 @@ Enemy.prototype.render = function() {
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
+let allEnemies = [
+    new Enemy(0, 70),
+    new Enemy(200, 150),
+    new Enemy(400, 230)
+];
 // Place the player object in a variable called player
 
 
