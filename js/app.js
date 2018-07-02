@@ -3,7 +3,7 @@ var INITIAL_Y = 400;
 
 
 // Enemies our player must avoid
-var Enemy = function (x, y, speed = 1) {
+var Enemy = function (x, y, speed = 100) {
     this.x = x;
     this.y = y;
     this.speed = speed;
@@ -15,11 +15,11 @@ var Enemy = function (x, y, speed = 1) {
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function (dt) {
     // You should multiply any movement by the dt parameter
-// this.x += this.speed * dt;
+ this.x += this.speed * dt;
 
-    // if (this.x > 505) {
-    //     this.x = 0;
-    // }
+     if (this.x > 505) {
+         this.x = 0;
+     }
     // which will ensure the game runs at the same speed for
     // all computers.
 };
@@ -50,6 +50,13 @@ Player.prototype.update = function (dt) {
     // all computers.
     playerX = this.x;
     playerY = this.y;
+    //this.y += this.speed * dt;
+
+     if (this.y > 606) {
+        this.y = 400;
+      }
+    // which will ensure the game runs at the same speed for
+    // all computers.
 };
 
 // Draw the player on the screen, required method for game
@@ -71,8 +78,8 @@ Player.prototype.handleInput = function (pressedKeys) {
 // Place all enemy objects in an array called allEnemies
 let allEnemies = [
     new Enemy(0, 65),
-    new Enemy(0, 145),
-    new Enemy(0, 225)
+    new Enemy(200, 145),
+    new Enemy(350, 225)
 ];
 // Place the player object in a variable called player
 var player = new Player (INITIAL_X, INITIAL_Y);
