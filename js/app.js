@@ -15,6 +15,7 @@ Enemy.prototype.update = function (dt) {
     if (this.x > 505) {
         this.x = 0;
     }
+
 };
 
 Enemy.prototype.render = function () {
@@ -39,7 +40,10 @@ Player.prototype.update = function (dt) {
         this.y = 400;
     }
     if (this.x > 450) {
-        this.x = 200;
+        this.x = 400;
+    }
+    if (this.x < 0) {
+        this.x = 0;
     }
 };
 
@@ -53,9 +57,9 @@ Player.prototype.handleInput = function (pressedKeys) {
     } else if (pressedKeys === 'right') {
         this.x += 100;
     } else if (pressedKeys === 'up') {
-        this.y -= 100;
+        this.y -= 90;
     } else if (pressedKeys === 'down') {
-        this.y += 100;
+        this.y += 90;
     }
 };
 
@@ -66,6 +70,12 @@ let allEnemies = [
 ];
 
 var player = new Player(INITIAL_X, INITIAL_Y);
+
+// checkCollisions() {
+//     if () {
+//         console.log("Bam!");
+//     };
+// }
 
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function (e) {
