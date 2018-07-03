@@ -1,8 +1,6 @@
 var INITIAL_X = 200;
 var INITIAL_Y = 400;
 
-
-// Enemies our player must avoid
 var Enemy = function (x, y, speed = 100) {
     this.x = x;
     this.y = y;
@@ -11,29 +9,18 @@ var Enemy = function (x, y, speed = 100) {
     this.sprite = 'images/enemy-bug.png';
 };
 
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function (dt) {
-    // You should multiply any movement by the dt parameter
- this.x += this.speed * dt;
+    this.x += this.speed * dt;
 
-     if (this.x > 505) {
-         this.x = 0;
-     }
-    // which will ensure the game runs at the same speed for
-    // all computers.
+    if (this.x > 505) {
+        this.x = 0;
+    }
 };
 
-// Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
-
-// player
 var Player = function (x, y) {
     this.x = x;
     this.y = y;
@@ -42,50 +29,44 @@ var Player = function (x, y) {
 
 var playerX
 var playerY
-// Update the player's position, required method for game
-// Parameter: dt, a time delta between ticks
+
 Player.prototype.update = function (dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
+
     playerX = this.x;
     playerY = this.y;
-    //this.y += this.speed * dt;
 
-     if (this.y > 606) {
+    if (this.y > 450) {
         this.y = 400;
-      }
-    // which will ensure the game runs at the same speed for
-    // all computers.
+    }
+    if (this.x > 450) {
+        this.x = 200;
+    }
 };
 
-// Draw the player on the screen, required method for game
 Player.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 Player.prototype.handleInput = function (pressedKeys) {
-    // if // code for pressed keys up
-
-    //  else if // code for pressed keys down
-
-    // else if // code for pressed keys left
-
-    // else if // code for pressed keys right
+    if (pressedKeys === 'left') {
+        this.x -= 100;
+    } else if (pressedKeys === 'right') {
+        this.x += 100;
+    } else if (pressedKeys === 'up') {
+        this.y -= 100;
+    } else if (pressedKeys === 'down') {
+        this.y += 100;
+    }
 };
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
 let allEnemies = [
     new Enemy(0, 65),
     new Enemy(200, 145),
     new Enemy(350, 225)
 ];
-// Place the player object in a variable called player
-var player = new Player (INITIAL_X, INITIAL_Y);
 
+var player = new Player(INITIAL_X, INITIAL_Y);
 
-// This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function (e) {
     var allowedKeys = {
