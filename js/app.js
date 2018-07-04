@@ -110,18 +110,25 @@ var modal = document.getElementById('myModal');
 // let player restart the game without winning
 var replay = document.querySelector('.close');
 replay.onclick = function () {
-    // will fix moving forward as I now know this isn't how we should handle resetting the game
-    window.location.reload();
+    player.x = 200;
+    player.y = 400;
+    modal.style.display = 'none';
+    bugOne.speed = 100;
+    bugTwo.speed = 200;
+    bugThree.speed = 300;
 }
+
 
 // let the player restart from the modal
 var btn = document.querySelector('#playAgain');
 btn.onclick = function () {
-    // will fix moving forward, as I now know this isn't how we should handle resetting the game
-    window.location.reload();
+   player.x = 200;
+   player.y = 400;
 }
 
 function youWin() {
-    console.log("You win!");
     modal.style.display = 'block';
+    bugOne.speed = 0;
+    bugTwo.speed = 0;
+    bugThree.speed = 0;
 }

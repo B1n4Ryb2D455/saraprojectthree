@@ -2,6 +2,13 @@ body {
     text-align: center;
 }
 
+#playAgain {
+    background: bottom;
+    border: none;
+    display: contents;
+    text-transform: uppercase;
+}
+
 /* The Modal (background) */
 
 .modal {
@@ -20,7 +27,6 @@ body {
 /* Modal Content/Box */
 
 .modal-content {
-    background-color: #523305b8;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
