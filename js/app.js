@@ -7,6 +7,7 @@ var Enemy = function (x, y, speed = 100) {
     this.speed = speed;
 
     this.sprite = 'images/enemy-bug.png';
+
 };
 
 Enemy.prototype.update = function (dt) {
@@ -35,15 +36,37 @@ Player.prototype.update = function (dt) {
 
     playerX = this.x;
     playerY = this.y;
+    bugOne = allEnemies[2];
+    bugTwo = allEnemies[1];
+    bugThree = allEnemies[0];
 
     if (this.y > 450) {
         this.y = 400;
     }
     if (this.x > 450) {
-        this.x = 400;
+       this.x = 400;
     }
     if (this.x < 0) {
         this.x = 0;
+    }
+
+    if ((this.y == 220 && bugOne.y == 225) && (this.x < bugOne.x + 50 && this.x > bugOne.x - 10)) {
+        this.y = 400;
+        this.x = 200;
+    }
+
+    if ((this.y == 130 && bugTwo.y == 145) && (this.x < bugTwo.x + 50 && this.x > bugTwo.x - 10)) {
+        this.y = 400;
+        this.x = 200;
+    }
+
+    if ((this.y == 40 && bugThree.y == 65) && (this.x < bugThree.x + 50 && this.x > bugThree.x - 10)) {
+        this.y = 400;
+        this.x = 200;
+    }
+
+    if (player.y == - 50) {
+        youWin();
     }
 };
 
@@ -69,13 +92,7 @@ let allEnemies = [
     new Enemy(350, 225)
 ];
 
-var player = new Player(INITIAL_X, INITIAL_Y);
-
-// checkCollisions() {
-//     if () {
-//         console.log("Bam!");
-//     };
-// }
+let player = new Player(INITIAL_X, INITIAL_Y);
 
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function (e) {
@@ -88,3 +105,7 @@ document.addEventListener('keyup', function (e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+function youWin() {
+    console.log("You win!");
+}
