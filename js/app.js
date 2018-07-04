@@ -106,6 +106,22 @@ document.addEventListener('keyup', function (e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
+var modal = document.getElementById('myModal');
+// let player restart the game without winning
+var replay = document.querySelector('.close');
+replay.onclick = function () {
+    // will fix moving forward as I now know this isn't how we should handle resetting the game
+    window.location.reload();
+}
+
+// let the player restart from the modal
+var btn = document.querySelector('#playAgain');
+btn.onclick = function () {
+    // will fix moving forward, as I now know this isn't how we should handle resetting the game
+    window.location.reload();
+}
+
 function youWin() {
     console.log("You win!");
+    modal.style.display = 'block';
 }
