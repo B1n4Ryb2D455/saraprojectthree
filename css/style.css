@@ -1,8 +1,8 @@
 body {
     text-align: center;
-     background-image: url(../images/trip.png);
+    background-image: url(../images/trip.png);
     background-repeat: round;
-        background-color: darkgoldenrod;
+    background-color: darkgoldenrod;
 }
 
 #playAgain {
@@ -11,8 +11,6 @@ body {
     display: contents;
     text-transform: uppercase;
 }
-
-/* The Modal (background) */
 
 .modal {
     display: none;
@@ -27,15 +25,11 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Modal Content/Box */
-
 .modal-content {
     margin: 15% auto;
     padding: 20px;
     width: 80%;
 }
-
-/* The Close Button */
 
 .close {
     color: black;
