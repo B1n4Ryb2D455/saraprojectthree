@@ -1,5 +1,8 @@
 body {
     text-align: center;
+     background-image: url(../images/trip.png);
+    background-repeat: round;
+        background-color: darkgoldenrod;
 }
 
 #playAgain {
@@ -29,31 +32,16 @@ body {
 .modal-content {
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
     width: 80%;
 }
 
 /* The Close Button */
 
 .close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
     color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* The Close Button */
-
-.close {
-    color: #aaa;
     font-size: 28px;
     font-weight: bold;
+    background-color: darkgoldenrod;
 }
 
 .close:hover,

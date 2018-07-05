@@ -44,7 +44,7 @@ Player.prototype.update = function (dt) {
         this.y = 400;
     }
     if (this.x > 450) {
-       this.x = 400;
+        this.x = 400;
     }
     if (this.x < 0) {
         this.x = 0;
@@ -65,7 +65,7 @@ Player.prototype.update = function (dt) {
         this.x = 200;
     }
 
-    if (player.y == - 50) {
+    if (player.y == -50) {
         youWin();
     }
 };
@@ -107,7 +107,7 @@ document.addEventListener('keyup', function (e) {
 });
 
 var modal = document.getElementById('myModal');
-// let player restart the game without winning
+
 var replay = document.querySelector('.close');
 replay.onclick = function () {
     player.x = 200;
@@ -116,14 +116,6 @@ replay.onclick = function () {
     bugOne.speed = 100;
     bugTwo.speed = 200;
     bugThree.speed = 300;
-}
-
-
-// let the player restart from the modal
-var btn = document.querySelector('#playAgain');
-btn.onclick = function () {
-   player.x = 200;
-   player.y = 400;
 }
 
 function youWin() {
