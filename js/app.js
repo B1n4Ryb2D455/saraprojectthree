@@ -50,17 +50,17 @@ Player.prototype.update = function (dt) {
         this.x = 0;
     }
 
-    if ((this.y == 220 && bugOne.y == 225) && (this.x < bugOne.x + 50 && this.x > bugOne.x - 10)) {
+    if ((this.y == 220 && bugOne.y == 225) && (this.x < bugOne.x + 60 && this.x > bugOne.x - 50)) {
         this.y = 400;
         this.x = 200;
     }
 
-    if ((this.y == 130 && bugTwo.y == 145) && (this.x < bugTwo.x + 50 && this.x > bugTwo.x - 10)) {
+    if ((this.y == 130 && bugTwo.y == 145) && (this.x < bugTwo.x + 60 && this.x > bugTwo.x - 50)) {
         this.y = 400;
         this.x = 200;
     }
 
-    if ((this.y == 40 && bugThree.y == 65) && (this.x < bugThree.x + 50 && this.x > bugThree.x - 10)) {
+    if ((this.y == 40 && bugThree.y == 65) && (this.x < bugThree.x + 60 && this.x > bugThree.x - 50)) {
         this.y = 400;
         this.x = 200;
     }
